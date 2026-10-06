@@ -41,7 +41,6 @@ h1 {
     transition: 0.2s;
 }
 
-/* Kleiner Hover Effekt */
 .poke-content:hover {
     transform: translateY(-5px);
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
@@ -74,7 +73,6 @@ h1 {
     cursor: pointer;
 }
 
-/* Hintergrund vom grossen Fenster */
 .pokemon-window {
     display: none;
     position: fixed;
@@ -87,7 +85,6 @@ h1 {
     align-items: center;
 }
 
-/* Inhalt vom grossen Fenster */
 .pokemon-window-content {
     background-color: white;
     width: 350px;
@@ -117,4 +114,104 @@ h1 {
     background: none;
     font-size: 20px;
     cursor: pointer;
+}
+
+
+.loader-box {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 30px;
+}
+
+.loader {
+    width: 45px;
+    height: 45px;
+    border: 6px solid lightgray;
+    border-top: 6px solid green;
+    border-radius: 50%;
+    animation: drehen 1s linear infinite;
+}
+
+@keyframes drehen {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.grass {
+    background-color: #78c850;
+}
+
+.water {
+    background-color: #6890f0;
+}
+
+.fire {
+    background-color: #f08030;
+}
+
+.electric {
+    background-color: #f8d030;
+}
+
+.normal {
+    background-color: #a8a878;
+}
+
+.poison {
+    background-color: #a040a0;
+}
+
+.bug {
+    background-color: #a8b820;
+}
+
+.flying {
+    background-color: #a890f0;
+}
+
+.ground {
+    background-color: #e0c068;
+}
+
+.psychic {
+    background-color: #f85888;
+}
+
+.rock {
+    background-color: #b8a038;
+}
+
+.ghost {
+    background-color: #705898;
+}
+
+.ice {
+    background-color: #98d8d8;
+}
+
+.dragon {
+    background-color: #7038f8;
+}
+
+.fighting {
+    background-color: #c03028;
+}
+
+.fairy {
+    background-color: #ee99ac;
+}
+
+.steel {
+    background-color: #b8b8d0;
+}
+
+.dark {
+    background-color: #705848;
 }
