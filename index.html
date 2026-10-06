@@ -1,29 +1,36 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pokedekk</title>
+    <title>Pokedek</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 </head>
+
 <body>
-<header>
-    <div class="header-content">
-        Pokemon
+    <nav class="nav-bar">
+        <h1>Pokedek</h1>
+        <input type="search" id="searchInput" placeholder="Pokemon suchen...">
+    </nav>
+
+    <main>
+        <div class="center">
+            <div class="poke-pfad" id="allpokemon"></div>
+        </div>
+
+        <div class="button">
+            <button class="button-press" id="loadMore">Lade mehr</button>
+        </div>
+    </main>
+
+    <div class="pokemon-window" id="pokemonWindow">
+        <div class="pokemon-window-content">
+            <button class="close-button" id="closeButton">X</button>
+            <div id="pokemonDetails"></div>
+        </div>
     </div>
-</header>
-<main>
-    <div class="poke-content" id="allPokemon">
-        <img src="">
-       <p></p>
-       <p></p>
-       <p></p>
-    </div>
-</main>
-
-
-
-    
 </body>
+
 </html>
