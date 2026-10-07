@@ -138,8 +138,6 @@ h1 {
     cursor: pointer;
 }
 
-
-/* Hintergrund wird grau und in der Mitte erscheint nur die kleine Loader-Box */
 .loader-overlay {
     display: none;
     position: fixed;
@@ -183,8 +181,6 @@ h1 {
     }
 }
 
-
-/* Deine Bilder als Hintergründe nach dem ersten Pokemon-Typ */
 .poke-content.grass,
 .pokemon-window-content.grass,
 .poke-content.bug,
@@ -232,8 +228,6 @@ h1 {
     background-image: linear-gradient(rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.4)), url('img/backgrounds/ground.png');
 }
 
-
-/* Fallback für Typen, für die noch kein eigenes Bild vorhanden ist */
 .normal {
     background-color: #a8a878;
 }
@@ -252,4 +246,135 @@ h1 {
 
 .dark {
     background-color: #705848;
+}
+
+@media screen and (max-width: 767px) {
+
+    body {
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    .nav-bar {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 12px;
+        padding: 14px 10px 20px;
+        text-align: center;
+        transform: translateX(-10px);
+    }
+
+    .nav-bar h1 {
+        margin: 0;
+        font-size: 38px;
+        line-height: 1.1;
+        text-align: center;
+        transform: translateX(-10px);
+    }
+
+    .nav-bar #searchInput {
+        display: block;
+        width: 180px;
+        max-width: calc(100vw - 40px);
+        padding: 7px 10px;
+        margin: 0 auto;
+        font-size: 14px;
+        transform: translateX(-10px);
+    }
+
+.poke-pfad {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+}
+
+    .center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .poke-pfad {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 14px;
+        padding: 0 10px;
+        margin: 0 auto;
+    }
+
+    .poke-content {
+        width: 220px;
+        max-width: calc(100vw - 40px);
+        margin: 20px auto 0;
+        align-items: center;
+        justify-content: center;
+        transform: translateX(-10px);
+    }
+    .poke-content img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        transform: translateX(-10px);
+    }
+
+    .button {
+        width: 100%;
+        text-align: center;
+        transform: translateX(-10px);
+    }
+
+
+    .pokemon-window {
+        padding: 15px;
+        transform: translateX(-10px);
+    }
+
+    .pokemon-window-content {
+        width: 100%;
+        max-width: 290px;
+        min-height: 0;
+        padding: 28px 20px;
+        margin: 0 auto;
+    }
+
+    .big-pokemon-img {
+        display: block;
+        width: 180px;
+        max-width: 75vw;
+        margin: 0 auto;
+    }
+
+
+    .loader-box {
+        width: 250px;
+        max-width: calc(100vw - 40px);
+    }
+}
+
+@media screen and (min-width: 1440px) {
+
+    .nav-bar {
+        padding-left: calc((100% - 1440px) / 2 + 20px);
+        padding-right: calc((100% - 1440px) / 2 + 20px);
+    }
+
+    .center,
+    .poke-pfad {
+        width: 100%;
+        max-width: 1440px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .button {
+        max-width: 1440px;
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
