@@ -31,14 +31,22 @@ h1 {
     border: 2px solid rgb(82, 91, 168);
     border-radius: 15px;
     width: 200px;
+    min-height: 190px;
     margin-top: 30px;
     margin-bottom: 5px;
     padding: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     cursor: pointer;
     transition: 0.2s;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    text-shadow: 0px 2px 5px black;
+    overflow: hidden;
 }
 
 .poke-content:hover {
@@ -48,6 +56,7 @@ h1 {
 
 .poke-content img {
     width: 120px;
+    filter: drop-shadow(0px 5px 5px rgba(0, 0, 0, 0.45));
 }
 
 .poke-pfad {
@@ -83,19 +92,28 @@ h1 {
     background-color: rgba(0, 0, 0, 0.6);
     justify-content: center;
     align-items: center;
+    z-index: 1000;
 }
 
 .pokemon-window-content {
     background-color: white;
     width: 350px;
+    min-height: 430px;
     padding: 30px;
     border-radius: 20px;
     text-align: center;
     position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    text-shadow: 0px 2px 5px black;
+    box-shadow: 0px 10px 35px rgba(0, 0, 0, 0.55);
 }
 
 .big-pokemon-img {
     width: 200px;
+    filter: drop-shadow(0px 8px 8px rgba(0, 0, 0, 0.5));
 }
 
 .pokemon-window-content h2 {
@@ -111,23 +129,44 @@ h1 {
     top: 10px;
     right: 10px;
     border: none;
-    background: none;
-    font-size: 20px;
+    background: rgba(0, 0, 0, 0.45);
+    color: white;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    font-size: 18px;
     cursor: pointer;
 }
 
 
-.loader-box {
+/* Hintergrund wird grau und in der Mitte erscheint nur die kleine Loader-Box */
+.loader-overlay {
     display: none;
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.45);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.loader-box {
+    width: 260px;
+    padding: 28px 25px;
+    background-color: white;
+    border-radius: 18px;
+    display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
-    margin-top: 30px;
+    gap: 14px;
+    color: #222;
+    text-shadow: none;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.35);
 }
 
 .loader {
-    width: 45px;
-    height: 45px;
+    width: 48px;
+    height: 48px;
     border: 6px solid lightgray;
     border-top: 6px solid green;
     border-radius: 50%;
@@ -144,68 +183,67 @@ h1 {
     }
 }
 
-.grass {
-    background-color: #78c850;
+
+/* Deine Bilder als Hintergründe nach dem ersten Pokemon-Typ */
+.poke-content.grass,
+.pokemon-window-content.grass,
+.poke-content.bug,
+.pokemon-window-content.bug {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.4)), url('img/backgrounds/grass.png');
 }
 
-.water {
-    background-color: #6890f0;
+.poke-content.water,
+.pokemon-window-content.water,
+.poke-content.ice,
+.pokemon-window-content.ice {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.4)), url('img/backgrounds/water.png');
 }
 
-.fire {
-    background-color: #f08030;
+.poke-content.fire,
+.pokemon-window-content.fire {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.4)), url('img/backgrounds/fire.png');
 }
 
-.electric {
-    background-color: #f8d030;
+.poke-content.electric,
+.pokemon-window-content.electric {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.4)), url('img/backgrounds/electric.png');
 }
 
+.poke-content.poison,
+.pokemon-window-content.poison {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.4)), url('img/backgrounds/poison.png');
+}
+
+.poke-content.flying,
+.pokemon-window-content.flying,
+.poke-content.fairy,
+.pokemon-window-content.fairy,
+.poke-content.psychic,
+.pokemon-window-content.psychic {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.4)), url('img/backgrounds/flying.png');
+}
+
+.poke-content.ground,
+.pokemon-window-content.ground,
+.poke-content.rock,
+.pokemon-window-content.rock,
+.poke-content.fighting,
+.pokemon-window-content.fighting {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.4)), url('img/backgrounds/ground.png');
+}
+
+
+/* Fallback für Typen, für die noch kein eigenes Bild vorhanden ist */
 .normal {
     background-color: #a8a878;
-}
-
-.poison {
-    background-color: #a040a0;
-}
-
-.bug {
-    background-color: #a8b820;
-}
-
-.flying {
-    background-color: #a890f0;
-}
-
-.ground {
-    background-color: #e0c068;
-}
-
-.psychic {
-    background-color: #f85888;
-}
-
-.rock {
-    background-color: #b8a038;
 }
 
 .ghost {
     background-color: #705898;
 }
 
-.ice {
-    background-color: #98d8d8;
-}
-
 .dragon {
     background-color: #7038f8;
-}
-
-.fighting {
-    background-color: #c03028;
-}
-
-.fairy {
-    background-color: #ee99ac;
 }
 
 .steel {
